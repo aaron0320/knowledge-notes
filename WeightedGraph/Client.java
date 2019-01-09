@@ -20,7 +20,8 @@ class Client {
 //		graph.printEdges();
 		
 //		KruskalMST mst = new KruskalMST(graph);
-		LazyPrimMST mst = new LazyPrimMST(graph);
+//		LazyPrimMST mst = new LazyPrimMST(graph);
+		EagerPrimMST mst = new EagerPrimMST(graph);
 		for (Edge e : mst.edges()) {
 			int v = e.either();
 			int w = e.other(v);
