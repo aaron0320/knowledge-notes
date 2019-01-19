@@ -39,6 +39,17 @@ class IndexMinPQ<Key extends Comparable<Key>> {
 	
 	public void insert(int i, Key key) {
 		if (i < 0 || i > maxN) throw new IllegalArgumentException("i is not valid");
+		if (contains(i)) {
+			if (keys[i].compareTo(key) > 0) {
+				decreaseKey(i, key);
+			}
+		} else {
+			insertOnly(i, key);
+		}
+	}
+	
+	public void insertOnly(int i, Key key) {
+		if (i < 0 || i > maxN) throw new IllegalArgumentException("i is not valid");
 		if (contains(i)) throw new IllegalArgumentException("i already existed");
 		
 		n++;
