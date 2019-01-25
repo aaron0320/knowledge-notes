@@ -24,7 +24,6 @@ class AcyclicSP extends SP {
 	private void relax(DirectedEdge e) {
 		int v = e.from();
 		int w = e.to();
-		System.out.println("relax " + v + "-" + w);
 		if (distTo[w] > distTo[v] + e.weight()) {
 			distTo[w] = distTo[v] + e.weight();
 			edgeTo[w] = e;
